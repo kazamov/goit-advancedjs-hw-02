@@ -56,4 +56,6 @@ form.addEventListener('submit', event => {
     position += 1;
     promiseDelay += step;
   }
+
+  form.reset();
 });

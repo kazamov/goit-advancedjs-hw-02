@@ -8,6 +8,7 @@ function getRandomHexColor() {
 
 function onStartButtonClick() {
   startButton.disabled = true;
+  stopButton.disabled = false;
 
   if (intervalId) {
     return;
@@ -23,10 +24,12 @@ function onStopButtonClick() {
   clearInterval(intervalId);
   intervalId = null;
   startButton.disabled = false;
+  stopButton.disabled = true;
 }
 
 const startButton = document.querySelector('button[data-start]');
 const stopButton = document.querySelector('button[data-stop]');
+stopButton.disabled = true;
 
 startButton.addEventListener('click', onStartButtonClick);
 stopButton.addEventListener('click', onStopButtonClick);
